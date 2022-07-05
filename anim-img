@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,800&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cambay&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>animation d'images</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="panel one">
+                <div class="msg">
+                    <h3>The fox family</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum, ab beatae maxime, nam dolorem, rerum eos numquam voluptatem mollitia minus. Quos, corrupti dolore deleniti sequi blanditiis, nemo beatae harum excepturi porro delectus dicta exercitationem. Vel, a fugiat. Illo, ipsa tempore praesentium est similique debitis earum et perferendis totam libero?</p>
+                </div>
+            </div>
+            <div class="panel two active">
+                <div class="msg">
+                    <h3>The nomadic fox</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum, ab beatae maxime, nam dolorem, rerum eos numquam voluptatem mollitia minus. Quos, corrupti dolore deleniti sequi blanditiis, nemo beatae harum excepturi porro delectus dicta exercitationem. Vel, a fugiat. Illo, ipsa tempore praesentium est similique debitis earum et perferendis totam libero?</p>
+                </div>
+            </div>
+            <div class="panel three">
+                <div class="msg">
+                    <h3>The prairie fox</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum, ab beatae maxime, nam dolorem, rerum eos numquam voluptatem mollitia minus. Quos, corrupti dolore deleniti sequi blanditiis, nemo beatae harum excepturi porro delectus dicta exercitationem. Vel, a fugiat. Illo, ipsa tempore praesentium est similique debitis earum et perferendis totam libero?</p>
+                </div>
+            </div>
+            <div class="panel four">
+                <div class="msg">
+                    <h3>The snow fox</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum, ab beatae maxime, nam dolorem, rerum eos numquam voluptatem mollitia minus. Quos, corrupti dolore deleniti sequi blanditiis, nemo beatae harum excepturi porro delectus dicta exercitationem. Vel, a fugiat. Illo, ipsa tempore praesentium est similique debitis earum et perferendis totam libero?</p>
+                </div>
+            </div>
+            <div class="panel five">
+                <div class="msg">
+                    <h3>The lonely fox</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio laborum, ab beatae maxime, nam dolorem, rerum eos numquam voluptatem mollitia minus. Quos, corrupti dolore deleniti sequi blanditiis, nemo beatae harum excepturi porro delectus dicta exercitationem. Vel, a fugiat. Illo, ipsa tempore praesentium est similique debitis earum et perferendis totam libero?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+<script src="index.js"></script>
+</body>
+</html>
+const panels = document.querySelectorAll('.panel');
+
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses();
+        panel.classList.add('active');
+
+    });
+});
+
+const removeActiveClasses = () => {
+    panels.forEach((panel) => {
+        panel.classList.remove('active');
+
+    });
+};
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #F1F1F1;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.panel {
+    background-size: auto 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* border-radius: 50px; */
+    color: #fefdfe;
+    cursor: pointer;
+    flex: 0.5;
+    /* margin:  0 2px; */
+    position: relative;
+    transition: all 0.6s ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    filter: blur(2px);
+    filter: grayscale(70%);
+    /* -webkit-transform:skew(2deg);
+	-moz-transform:skew(2deg);
+	-o-transform:skew(2deg);
+	tranform:skew(2deg); */
+}
+
+.panel:hover {
+    filter: grayscale(45%);
+}
+
+.one {
+    background-image: url(https://images.unsplash.com/photo-1634521991558-a1f4dbd641db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+}
+.two {
+    background-image: url(https://images.unsplash.com/photo-1571775300229-7e84bff45eae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+}
+.three {
+    background-image: url(https://images.unsplash.com/photo-1501707305551-9b2adda5e527?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80);
+}
+.four {
+    background-image: url(https://images.unsplash.com/photo-1580150083503-b69bbabc96c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+}
+.five {
+    background-image: url(https://images.unsplash.com/photo-1505259839540-04105fcd8ba3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1394&q=80);
+}
+
+.panel h3 {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    font-family: 'EB Garamond', serif;
+}
+
+.panel.active {
+    flex: 5;
+    z-index: 5;
+    box-shadow: 5px 5px 29px -4px rgba(68,68,68,0.87);
+    filter: blur(0px);
+    filter: grayscale(0%);
+    margin:  0 2px;
+}
+
+.panel.active .msg {
+    opacity: 1;
+    transition: opacity .3s ease-in .4s;
+}
+
+.msg {
+    position: absolute;
+    bottom: 4%;
+    left: 3%;
+    width: 67%;
+    opacity: 0;
+    padding: 11px 14px;
+    border-radius: 25px;
+    background-color: rgba(176, 176, 176, 0.105);
+    backdrop-filter: blur(3px);
+    /* -webkit-transform:skew(-2deg);
+	-moz-transform:skew(-2deg);
+	-o-transform:skew(-2deg);
+	tranform:skew(-2deg); */
+}
+
+.msg p {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    font-family: 'Cambay', sans-serif;
+}
+
+
+@media (max-width: 1450px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
+
+
+
